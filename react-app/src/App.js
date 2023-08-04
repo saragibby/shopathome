@@ -5,9 +5,6 @@ import { Route, Routes } from 'react-router-dom';
 import { HeaderBar, NavBar, NotFound } from './components';
 import Home from './Home';
 
-// const Products = withRouter(
-//   lazy(() => import(/* webpackChunkName: "products" */ './products/Products')),
-// );
 const Products = lazy(() =>
   import(/* webpackChunkName: "products" */ './products/Products'),
 );
@@ -27,7 +24,6 @@ class App extends Component {
             <Suspense fallback={<div>Loading...</div>}>
               <Routes>
                 <Route path="/" element={<Home />} />
-                {/* <Redirect from="/" exact to="/home" /> */}
                 <Route path="home" element={<Home />} />
                 <Route path="discounts/*" element={<Discounts />} />
                 <Route path="products/*" element={<Products />} />
